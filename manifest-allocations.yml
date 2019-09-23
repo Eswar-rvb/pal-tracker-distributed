@@ -3,10 +3,10 @@ applications:
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
   - route: allocations-pal-eswar.apps.dev.pcf-aws.com
-  memory: 780M
+  memory: 700M
   instances: 1
   env:
-    REGISTRATION_SERVER_ENDPOINT: https://registration-pal-eswar.apps.dev.pcf-aws.com
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
   services:
   - tracker-allocations-database3
+  - tracker-service-registry

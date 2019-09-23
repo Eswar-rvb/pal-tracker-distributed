@@ -1,11 +1,13 @@
+  
 applications:
 - name: tracker-registration4
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
   - route: registration-pal-eswar.apps.dev.pcf-aws.com
-  memory: 780M
+  memory: 700M
   instances: 1
   env:
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
   services:
   - tracker-registration-database3
+  - tracker-service-registry
