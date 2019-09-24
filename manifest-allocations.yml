@@ -1,8 +1,8 @@
 applications:
-- name: tracker-allocations
+- name: tracker-allocations4
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
-  - route: allocations-pal-eswar.cfapps.io
+  - route: allocations-pal-eswar.apps.dev.pcf-aws.com
   memory: 500M
   disk_quota: 500M
   instances: 1
@@ -10,5 +10,6 @@ applications:
     JAVA_OPTS: '-XX:MaxMetaspaceSize=80780K -Xss512k -Xmx200M -XX:ReservedCodeCacheSize=16M -XX:MaxDirectMemorySize=16M'
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
   services:
-  - tracker-allocations-database
+  - tracker-allocations-database3
   - tracker-service-registry
+  - tracker-circuit-breaker-dashboard

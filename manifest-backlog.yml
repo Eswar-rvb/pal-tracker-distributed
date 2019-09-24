@@ -1,8 +1,8 @@
 applications:
-- name: tracker-backlog
+- name: tracker-backlog4
   path: ./applications/backlog-server/build/libs/backlog-server.jar
   routes:
-  - route: backlog-pal-eswar.cfapps.io
+  - route: backlog-pal-eswar.apps.dev.pcf-aws.com
   memory: 500M
   disk_quota: 500M
   instances: 1
@@ -10,5 +10,6 @@ applications:
     JAVA_OPTS: '-XX:MaxMetaspaceSize=80780K -Xss512k -Xmx200M -XX:ReservedCodeCacheSize=16M -XX:MaxDirectMemorySize=16M'
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
   services:
-  - tracker-backlog-database
+  - tracker-backlog-database3
   - tracker-service-registry
+  - tracker-circuit-breaker-dashboard

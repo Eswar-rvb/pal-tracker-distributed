@@ -1,8 +1,8 @@
 applications:
-- name: tracker-timesheets
+- name: tracker-timesheets4
   path: ./applications/timesheets-server/build/libs/timesheets-server.jar
   routes:
-  - route: timesheets-pal-eswar.cfapps.io
+  - route: timesheets-pal-eswar.apps.dev.pcf-aws.com
   memory: 500M
   disk_quota: 500M
   instances: 1
@@ -10,5 +10,6 @@ applications:
     JAVA_OPTS: '-XX:MaxMetaspaceSize=80780K -Xss512k -Xmx200M -XX:ReservedCodeCacheSize=16M -XX:MaxDirectMemorySize=16M'
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
   services:
-  - tracker-timesheets-database
+  - tracker-timesheets-database3
   - tracker-service-registry
+  - tracker-circuit-breaker-dashboard
